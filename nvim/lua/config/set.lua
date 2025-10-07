@@ -28,7 +28,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.isfname:append('@-@')
 
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = '80,120,' .. table.concat(vim.fn.range(122, 999), ',')
+--vim.opt.colorcolumn = '80,120,' .. table.concat(vim.fn.range(122, 999), ',')
 
 vim.diagnostic.config({
     virtual_text = true,

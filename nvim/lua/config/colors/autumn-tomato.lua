@@ -68,9 +68,9 @@ function M.setup()
     end
 
     -- Editor UI
-    hl('Normal', { fg = c.fg, bg = c.bg })
-    hl('NormalFloat', { fg = c.fg, bg = c.bg })
-    hl('ColorColumn', { bg = c.line_highlight })
+    hl('Normal', { fg = c.fg, bg = 'none' })
+    hl('NormalFloat', { fg = c.fg, bg = 'none' })
+--    hl('ColorColumn', { bg = c.fg })
     hl('Cursor', { fg = c.bg, bg = c.fg })
     hl('CursorLine', { bg = c.line_highlight })
     hl('CursorColumn', { bg = c.line_highlight })

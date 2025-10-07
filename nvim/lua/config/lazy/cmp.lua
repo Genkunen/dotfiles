@@ -8,10 +8,16 @@ return {
             'hrsh7th/cmp-cmdline',  -- cmdline completion
             'L3MON4D3/LuaSnip',     -- snippet engine
             'saadparwaiz1/cmp_luasnip', -- snippets in cmp
+            'windwp/nvim-autopairs',
         },
         config = function()
             local cmp = require('cmp')
             local luasnip = require('luasnip')
+            local npairs = require('nvim-autopairs')
+            npairs.setup{}
+
+            local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+            cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
             cmp.setup({
                 snippet = {
