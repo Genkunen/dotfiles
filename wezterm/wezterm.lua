@@ -24,12 +24,13 @@ config.window_frame = {
 config.font = wezterm.font{ family = 'Comic Code Ligatures' }
 config.font_size = 13
 
+config.front_end = "Software"
+
 config.colors = colors
 config.window_background_gradient = {
     colors = {
         '#1e1e1e',
         '#1e1e1e',
-        '#0e0e0e'
     }
 }
 
