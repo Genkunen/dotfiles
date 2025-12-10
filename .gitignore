@@ -1,5 +1,6 @@
-*
-!.gitignore
-!wezterm/**
-!fastfetch/**
-!nvim/**
+/*
+
+!/wezterm/
+!/fastfetch/
+!/nvim/
+!/.gitignore
