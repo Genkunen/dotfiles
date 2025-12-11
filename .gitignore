@@ -4,3 +4,4 @@
 !/fastfetch/
 !/nvim/
 !/.gitignore
+!/starship.toml

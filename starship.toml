@@ -1,0 +1,74 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+palette = 'my_theme'
+
+[palettes.my_theme]
+character = '#666666'
+sigsev = '#8d021f'
+directory = '#a8a8a8'
+git_branch = '#597396'
+
+[character]
+success_symbol = '[~~>](bold character)'
+error_symbol = '[SIGSEV](bold sigsev)'
+
+[c]
+format = '\[[$name $version]($style)\] '
+disabled = false
+
+[cpp]
+format = '\[[$name $version]($style)\] '
+disabled = false
+
+[cmake]
+format = '\[[CMake $version]($style)\] '
+disabled = false
+
+[haskell]
+format = '\[[haskell $version]($style)\] '
+disabled = false
+
+[java]
+format = '\[[java $version]($style)\] '
+disabled = false
+
+[lua]
+format = '\[[lua $version]($style)\] '
+disabled = false
+
+[meson]
+format = '\[[meson $project]($style)\] '
+disabled = false
+
+[nodejs]
+format = '\[[nodejs $version]($style)\] '
+disabled = false
+
+[odin]
+format = '\[[odin $version]($style)\] '
+disabled = false
+
+[python]
+format = '\[[python $version]($style)\] '
+disabled = false
+
+[rust]
+format = '\[[rust $version]($style)\] '
+disabled = false
+
+[zig]
+format = '\[[zig $version]($style)\] '
+disabled = false
+
+[directory]
+style = 'bold directory'
+read_only_style = 'bold sigsev'
+
+[git_branch]
+style = 'bold git_branch'
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[package]
+disabled = true
+
