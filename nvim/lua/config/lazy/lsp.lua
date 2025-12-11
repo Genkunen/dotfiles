@@ -21,7 +21,7 @@ return {
             })
             vim.lsp.config('clangd', {
                 capabilities = capabilities,
-                cmd = { 'clangd', '--header-insertion' },
+                cmd = { 'clangd', '--header-insertion=never' },
             })
             vim.lsp.enable('clangd')
 
@@ -35,22 +35,22 @@ return {
             })
             vim.lsp.enable('lua_ls')
 
-            vim.lsp.enable('pyright', {
+            vim.lsp.config('pyright', {
                 capabilities = capabilities
             })
             vim.lsp.enable('pyright')
 
-            vim.lsp.enable('ts_ls', {
+            vim.lsp.config('ts_ls', {
                 capabilities = capabilities
             })
             vim.lsp.enable('ts_ls')
 
-            vim.lsp.enable('zls', {
+            vim.lsp.config('zls', {
                 capabilities = capabilities
             })
             vim.lsp.enable('zls')
 
-            vim.lsp.enable('rust_analyzer', {
+            vim.lsp.config('rust_analyzer', {
                 capabilities = capabilities,
                 settings = {
                     ['rust_analyzer'] = {
@@ -62,15 +62,21 @@ return {
             })
             vim.lsp.enable('rust_analyzer')
 
-            vim.lsp.enable('html', {
+            vim.lsp.config('html', {
                 capabilities = capabilities
             })
             vim.lsp.enable('html')
 
-            vim.lsp.enable('cssls', {
+            vim.lsp.config('cssls', {
                 capabilities = capabilities
             })
             vim.lsp.enable('cssls')
+
+            vim.lsp.config('emmet_ls', {
+                capabilities = capabilities,
+                filetypes = { 'html', 'css', 'javascriptreact', 'typescriptreact' }
+            })
+            vim.lsp.enable('emmet_ls')
         end,
     },
     { 'hrsh7th/nvim-cmp', dependencies = { 'hrsh7th/cmp-nvim-lsp' }},
