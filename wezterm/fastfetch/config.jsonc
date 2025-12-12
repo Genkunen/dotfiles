@@ -1,0 +1,57 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "auto",
+    "source": "~/.config/fastfetch/logo.txt",
+    "color": {
+        "1": "#286ab5" 
+    }  
+  },
+  "display": {
+      "separator": " "
+  },
+  "modules": [
+      {
+          "type": "command",
+          "key": "GCC",
+          "text": "gcc --version | head -n 1 | grep -oE '\\b[0-9]+\\.[0-9]+\\.[0-9]+\\b'",
+          "keyColor": "#ff2222",
+          "outputColor": "#ff4444"
+      },
+      {
+          "type": "command",
+          "key": "CLANG",
+          "text": "clang --version -w | head -n 1 | grep -oE '\\b[0-9]+\\.[0-9]+\\.[0-9]+\\b'",
+          "keyColor": "#11cc11",
+          "outputColor": "#66cc66"
+      }, 
+      {
+          "type": "command",
+          "key": "PYTHON",
+          "text": "python3 --version | grep -oE '\\b[0-9]+\\.[0-9]+\\.[0-9]+\\b'",
+          "keyColor": "#1155d8",
+          "outputColor": "#2255dd"
+      },
+      {
+          "type": "command",
+          "key": "LUA",
+          "text": "lua -v | grep -oE '\\b[0-9]+\\.[0-9]+\\.[0-9]+\\b'",
+          "keyColor": "#1199d8",
+          "outputColor": "#22aad8"
+      },
+      {
+          "type": "command",
+          "key": "RUST",
+          "text": "rustc --version | grep -oE '\\b[0-9]+\\.[0-9]+\\.[0-9]+\\b'",
+          "keyColor": "#806030",
+          "outputColor": "#807040"
+      },
+      {
+          "type": "command",
+          "key": "ZIG",
+          "text": "zig version | grep -oE '\\b[0-9]+\\.[0-9]+\\.[0-9]+\\b'",
+          "keyColor": "#deb902",
+          "outputColor": "#dbbb1a"
+      }
+  ]
+}

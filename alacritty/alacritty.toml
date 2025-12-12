@@ -1,0 +1,19 @@
+[font]
+size = 8
+
+[font.normal]
+family = "Comic Code"
+style = "Regular"
+
+[font.bold]
+family = "Comic Code"
+style = "Bold"
+
+[font.italic]
+family = "Comic Code"
+style = "Bold"
+
+[window]
+decorations = "Full"
+opacity = 1.0
+

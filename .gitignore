@@ -1,7 +1,17 @@
 /*
 
-!/wezterm/
+# directories
+!/Thunar/
+!/alacritty/
 !/fastfetch/
+!/fish/
+!/go/
+!/i3/
+!/i3blocks/
 !/nvim/
+!/wezterm/
+
+# files
 !/.gitignore
 !/starship.toml
+
