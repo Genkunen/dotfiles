@@ -19,39 +19,26 @@ return {
                     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
                 end,
             })
-            vim.lsp.config('clangd', {
-                capabilities = capabilities,
-                cmd = { 'clangd', '--header-insertion=never' },
-            })
-            vim.lsp.enable('clangd')
+            local enable_lsp = function(name, config)
+                config.capabilities = capabilities
+                vim.lsp.config(name, config)
+                vim.lsp.enable(name)
+            end
 
-            vim.lsp.config('lua_ls', {
-                capabilities = capabilities,
+            enable_lsp('clangd', {
+                cmd = { 'clangd', '--header-insertion=never' }
+            })
+            enable_lsp('lua_ls', {
                 settings = {
                     Lua = {
-                        diagnostics = { globals = { 'vim' } },
-                    },
-                },
+                        diagnostics = { globals = { 'vim' } }
+                    }
+                }
             })
-            vim.lsp.enable('lua_ls')
-
-            vim.lsp.config('pyright', {
-                capabilities = capabilities
-            })
-            vim.lsp.enable('pyright')
-
-            vim.lsp.config('ts_ls', {
-                capabilities = capabilities
-            })
-            vim.lsp.enable('ts_ls')
-
-            vim.lsp.config('zls', {
-                capabilities = capabilities
-            })
-            vim.lsp.enable('zls')
-
-            vim.lsp.config('rust_analyzer', {
-                capabilities = capabilities,
+            enable_lsp('ts_ls', {})
+            enable_lsp('pyright', {})
+            enable_lsp('zls', {})
+            enable_lsp('rust_analyzer', {
                 settings = {
                     ['rust_analyzer'] = {
                         checkOnSave = {
@@ -60,23 +47,20 @@ return {
                     }
                 }
             })
-            vim.lsp.enable('rust_analyzer')
-
-            vim.lsp.config('html', {
-                capabilities = capabilities
+            enable_lsp('html', {})
+            enable_lsp('cssls', {})
+            enable_lsp('emmet_ls', {
+                filetypes = {
+                    'html', 'css', 'javascriptreact', 'typescriptreact' 
+                }
             })
-            vim.lsp.enable('html')
-
-            vim.lsp.config('cssls', {
-                capabilities = capabilities
+            enable_lsp('dartls', {})
+            enable_lsp('elixirls', {
+                cmd = { '/usr/bin/elixir-ls' }
             })
-            vim.lsp.enable('cssls')
-
-            vim.lsp.config('emmet_ls', {
-                capabilities = capabilities,
-                filetypes = { 'html', 'css', 'javascriptreact', 'typescriptreact' }
-            })
-            vim.lsp.enable('emmet_ls')
+            enable_lsp('hls', {})
+            enable_lsp('fortls', {})
+            enable_lsp('gopls', {})
         end,
     },
     { 'hrsh7th/nvim-cmp', dependencies = { 'hrsh7th/cmp-nvim-lsp' }},
