@@ -11,7 +11,7 @@ git_branch = '#597396'
 
 [character]
 success_symbol = '[~~>](bold character)'
-error_symbol = '[SIGSEV](bold sigsev)'
+error_symbol = '[SIGSEGV](bold sigsev)'
 
 [c]
 format = '\[[$name $version]($style)\] '
