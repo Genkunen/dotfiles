@@ -1,8 +1,19 @@
-[time]
+[brightness]
+command=~/.config/i3blocks/src/brightness.sh
+interval=once
+signal=11
+
+[volume]
+command=~/.config/i3blocks/src/volume.sh
+interval=once
+signal=10
+
+[battery]
 command=~/.config/i3blocks/src/battery.sh
 interval=100
 
 [time]
 command=date '+%Y-%m-%d %H:%M:%S '
 interval=1
+
 

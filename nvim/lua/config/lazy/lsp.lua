@@ -26,7 +26,13 @@ return {
             end
 
             enable_lsp('clangd', {
-                cmd = { 'clangd', '--header-insertion=never' }
+                cmd = {
+                    'clangd',
+                    '--background-index',
+                    '--compile-commands-dir=build',
+                    '--header-insertion=never',
+                    '--query-driver=/usr/bin/clang++,/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++,/usr/bin/cc,/usr/bin/c++'
+                }
             })
             enable_lsp('lua_ls', {
                 settings = {
