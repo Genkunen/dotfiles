@@ -45,6 +45,12 @@ int main() {
     {
         char buffer[32] = {0};
         if(GetVolume(sizeof(buffer), &buffer) == 0) {
+            if(strncmp("MUTE", buffer, 4) == 0) {
+                printf("    MUTE    \n");
+                printf("    MUTE    \n");
+                printf("#d1d1d1\n");
+                return 0;
+            }
             strncpy(volumeStr, buffer, sizeof(volumeStr) - 1);
         } 
         else {
@@ -62,8 +68,13 @@ int main() {
         while(it < end && *it++ != '%') {}
         size_t size = it - volumeStr;
         strncpy(output, volumeStr, size);
-        strncpy(output + size, " [", 3);
-        written = size + 2;
+        size_t vollen = 5 - size;
+        it = output + size;
+        while(vollen --> 0) {
+            *it++ = ' ';
+        }
+        *it = '[';
+        written = 6;
     }
     char color[8] = {0};
     {

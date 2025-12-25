@@ -11,9 +11,9 @@ main :: IO ()
 main = do
     args <- getArgs
     case args of 
-        ["percentage"] -> getBatteryPercentage >>= putStr
+        ["data"] -> getBatteryPercentage >>= putStr
         ["color"]      -> getBatteryPercentage >>= putStrLn . getBatteryColor
-        []             -> putStrLn "[battery, color]"
+        []             -> putStrLn "[data, color]"
         (cmd:_)        -> putStrLn "unknown command"
     
 getBatteryPercentage :: IO String

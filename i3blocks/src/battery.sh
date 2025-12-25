@@ -1,5 +1,5 @@
 file="$HOME/.config/i3blocks/src/battery/battery"
-percent=$("$file" percentage)
+percent=$("$file" data)
 color=$("$file" color)
 
 echo "$percent"
