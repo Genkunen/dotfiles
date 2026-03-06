@@ -67,6 +67,9 @@ return {
             enable_lsp('hls', {})
             enable_lsp('fortls', {})
             enable_lsp('gopls', {})
+            enable_lsp('jdtls', {
+                cmd = { 'jdtls' },
+            })
         end,
     },
     { 'hrsh7th/nvim-cmp', dependencies = { 'hrsh7th/cmp-nvim-lsp' }},
