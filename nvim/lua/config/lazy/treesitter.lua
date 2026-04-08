@@ -2,7 +2,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
 
-    config = function() 
+    config = function()
         require('nvim-treesitter.configs').setup({
             ensure_installed = { 'c', 'cpp', 'lua', },
 
@@ -16,7 +16,7 @@ return {
             highlight = {
                 enable = true,
                 additional_vim_regex_highlighting = { 'markdown'},
-            },   
+            },
         })
 
         local treesitter_parser_config = require('nvim-treesitter.parsers').get_parser_configs()
@@ -29,5 +29,5 @@ return {
         }
 
         vim.treesitter.language.register('templ', 'templ')
-    end 
+    end
 }

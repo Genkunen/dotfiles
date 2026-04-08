@@ -70,6 +70,21 @@ return {
             enable_lsp('jdtls', {
                 cmd = { 'jdtls' },
             })
+            enable_lsp('texlab', {
+                settings = {
+                    texlab = {
+                        build = {
+                            executable = "latexmk",
+                            args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+                            onSave = true,
+                        },
+                        forwardSearch = {
+                            executable = "zathura",
+                            args = { "--synctex-forward", "%l:1:%f", "%p" },
+                        },
+                    },
+                },
+            })
         end,
     },
     { 'hrsh7th/nvim-cmp', dependencies = { 'hrsh7th/cmp-nvim-lsp' }},
